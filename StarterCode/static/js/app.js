@@ -3,7 +3,7 @@ var jsData;
 function init(){
     var selector = d3.select("selDataset");
 
-    d3.json("./data/samples.json").then((data) =>{
+    d3.json("samples.json").then((data) =>{
       jsData = data;
         var subjectID = data.names;
         subjectID.forEach((ID) => {
@@ -19,7 +19,7 @@ function init(){
 }
   
   function updateCharts(sample) {    
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
     var samples = data.samples;
     var filterArray = samples.filter(sampleObject => sampleObject.id == sample);
     var result = filterArray[0];
@@ -66,7 +66,7 @@ function init(){
   }
   
   function updateMetadata(sample) {
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         var metadata = data.metadata;
         var filterArray = metadata.filter(sampleObject => sampleObject.id == sample);
         var result = filterArray[0];
